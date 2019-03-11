@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+         |-----handy-ruler------------------------------------------------------|
+ipa-fonts: ipa-fonts (IPA Japanese TrueType fonts)
+ipa-fonts:
+ipa-fonts: Japanese TrueType fonts provided by IPA (Information-technology
+ipa-fonts: Promotion Agency).
+ipa-fonts:
+ipa-fonts: Mincho / Gothic (Sans serif) style and fixed / proportional fonts
+ipa-fonts: for each style are available.
+ipa-fonts:
+ipa-fonts: Please read and agree the license:
+ipa-fonts: /usr/doc/ipa-fonts-00303/IPA_Font_License_Agreement_v1.0.txt
+ipa-fonts:

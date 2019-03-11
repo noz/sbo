@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+           |-----handy-ruler------------------------------------------------------|
+ipaex-fonts: ipaex-fonts (IPAex Japanese TrueType fonts)
+ipaex-fonts:
+ipaex-fonts: Japanese TrueType fonts provided by IPA (Information-technology
+ipaex-fonts: Promotion Agency). Mincho style and Gothic (Sans serif) style are
+ipaex-fonts: available. These fonts have fixed width for Japanese characters
+ipaex-fonts: and proportional width for Western characters. Best balance for
+ipaex-fonts: Japanese documentation mixed with Western characters.
+ipaex-fonts:
+ipaex-fonts: Please read and agree the license:
+ipaex-fonts: /usr/doc/ipaex-fonts-00301/IPA_Font_License_Agreement_v1.0.txt
+ipaex-fonts:
