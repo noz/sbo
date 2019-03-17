@@ -26,7 +26,7 @@ PRGNAM=hanazono-fonts
 ZIPNAM=hanazono
 VERSION=${VERSION:-20170904}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_local}
+TAG=${TAG:-_noz}
 
 ARCH=noarch
 

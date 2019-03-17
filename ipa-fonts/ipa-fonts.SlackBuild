@@ -26,7 +26,7 @@ PRGNAM=ipa-fonts
 ZIPNAM=IPAfont
 VERSION=${VERSION:-00303}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_local}
+TAG=${TAG:-_noz}
 
 ARCH=noarch
 
