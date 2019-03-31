@@ -85,19 +85,22 @@ CXXFLAGS="$SLKCFLAGS" \
 
 make
 
+bindir=$PKG/usr/games
+sharedir=$PKG/usr/share/games/zangband
+vardir=$PKG/var/games/zangband
 
-mkdir -p $PKG/usr/games
-cp zangband $PKG/usr/games
+mkdir -p $bindir
+cp zangband $bindir
 
-mkdir -p $PKG/usr/share/games/zangband
+mkdir -p $sharedir
 cp -r lib/edit lib/file lib/help lib/info lib/pref lib/script lib/xtra \
-   $PKG/usr/share/games/zangband
+   $sharedir
 
-mkdir -p $PKG/var/games/zangband
-cp -r lib/apex lib/bone lib/data lib/save lib/user $PKG/var/games/zangband
+mkdir -p $vardir
+cp -r lib/apex lib/bone lib/data lib/save lib/user $vardir
 
-find $PKG/usr/share/games/zangband -name makefile.zb | xargs rm -f
-find $PKG/var/games/zangband -name makefile.zb | xargs rm -f
+find $sharedir -name makefile.zb | xargs rm -f
+find $vardir -name makefile.zb | xargs rm -f
 
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
