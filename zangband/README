@@ -1,0 +1,7 @@
+
+patched to run under x86_64 arch.
+
+libdir location is modified to fit for system-wide installation.
+/usr/games/zangband is setgid'ed to 'games' group.
+
+this package does standard build (x11 and curses).

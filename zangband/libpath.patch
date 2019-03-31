@@ -1,0 +1,139 @@
+--- src/init2.c.orig
++++ src/init2.c
+@@ -120,121 +120,22 @@
+ 
+ 	/*** Prepare the "path" ***/
+ 
+-	/* Hack -- save the main directory */
+-	ANGBAND_DIR = string_make(path);
++	/* unused */
++	ANGBAND_DIR = string_make("");
+ 
+-	/* Prepare to append to the Base Path */
+-	tail = path + strlen(path);
+-
+-
+-#ifdef VM
+-
+-
+-	/*** Use "flat" paths with VM/ESA ***/
+-
+-	/* Use "blank" path names */
+-	ANGBAND_DIR_APEX = string_make("");
+-	ANGBAND_DIR_BONE = string_make("");
+-	ANGBAND_DIR_DATA = string_make("");
+-	ANGBAND_DIR_EDIT = string_make("");
+-	ANGBAND_DIR_SCRIPT = string_make("");
+-	ANGBAND_DIR_FILE = string_make("");
+-	ANGBAND_DIR_HELP = string_make("");
+-	ANGBAND_DIR_INFO = string_make("");
+-	ANGBAND_DIR_SAVE = string_make("");
+-	ANGBAND_DIR_PREF = string_make("");
+-	ANGBAND_DIR_USER = string_make("");
+-	ANGBAND_DIR_XTRA = string_make("");
+-
+-
+-#else  /* VM */
+-
+-
+-	/*** Build the sub-directory names ***/
+-
+-	/* Build a path name */
+-	strcpy(tail, "edit");
+-	ANGBAND_DIR_EDIT = string_make(path);
+-
+-	/* Build a path name */
+-	strcpy(tail, "script");
+-	ANGBAND_DIR_SCRIPT = string_make(path);
+-
+-	/* Build a path name */
+-	strcpy(tail, "file");
+-	ANGBAND_DIR_FILE = string_make(path);
+-
+-	/* Build a path name */
+-	strcpy(tail, "help");
+-	ANGBAND_DIR_HELP = string_make(path);
+-
+-	/* Build a path name */
+-	strcpy(tail, "info");
+-	ANGBAND_DIR_INFO = string_make(path);
+-
+-	/* Build a path name */
+-	strcpy(tail, "pref");
+-	ANGBAND_DIR_PREF = string_make(path);
+-
+-#ifdef PRIVATE_USER_PATH
+-
+-	/* Build the path to the user specific directory */
+-	path_make(buf, PRIVATE_USER_PATH, VERSION_NAME);
+-
+-	/* Build a relative path name */
+-	ANGBAND_DIR_USER = string_make(buf);
+-
+-#else  /* PRIVATE_USER_PATH */
+-
+-	/* Build a path name */
+-	strcpy(tail, "user");
+-	ANGBAND_DIR_USER = string_make(path);
+-
+-#endif /* PRIVATE_USER_PATH */
+-
+-#ifdef USE_PRIVATE_PATHS
+-
+-	/* Build a path name */
+-	path_make(buf, ANGBAND_DIR_USER, "scores");
+-	ANGBAND_DIR_APEX = string_make(buf);
+-
+-	/* Build a path name */
+-	path_make(buf, ANGBAND_DIR_USER, "bone");
+-	ANGBAND_DIR_BONE = string_make(buf);
+-
+-	/* Build a path name */
+-	path_make(buf, ANGBAND_DIR_USER, "data");
+-	ANGBAND_DIR_DATA = string_make(buf);
+-
+-	/* Build a path name */
+-	path_make(buf, ANGBAND_DIR_USER, "save");
+-	ANGBAND_DIR_SAVE = string_make(buf);
+-
+-#else /* USE_PRIVATE_PATHS */
+-
+-	/* Build a path name */
+-	strcpy(tail, "apex");
+-	ANGBAND_DIR_APEX = string_make(path);
+-
+-	/* Build a path name */
+-	strcpy(tail, "bone");
+-	ANGBAND_DIR_BONE = string_make(path);
+-
+-	/* Build a path name */
+-	strcpy(tail, "data");
+-	ANGBAND_DIR_DATA = string_make(path);
+-
+-	/* Build a path name */
+-	strcpy(tail, "save");
+-	ANGBAND_DIR_SAVE = string_make(path);
+-
+-#endif /* USE_PRIVATE_PATHS */
+-
+-	/* Build a path name */
+-	strcpy(tail, "xtra");
+-	ANGBAND_DIR_XTRA = string_make(path);
+-
+-#endif /* VM */
++	ANGBAND_DIR_APEX = string_make("/var/games/zangband/apex");
++	ANGBAND_DIR_BONE = string_make("/var/games/zangband/bone");
++	ANGBAND_DIR_DATA = string_make("/var/games/zangband/data");
++	ANGBAND_DIR_SAVE = string_make("/var/games/zangband/save");
++	ANGBAND_DIR_USER = string_make("/var/games/zangband/user");
++
++	ANGBAND_DIR_EDIT = string_make("/usr/share/games/zangband/edit");
++	ANGBAND_DIR_FILE = string_make("/usr/share/games/zangband/file");
++	ANGBAND_DIR_HELP = string_make("/usr/share/games/zangband/help");
++	ANGBAND_DIR_INFO = string_make("/usr/share/games/zangband/info");
++	ANGBAND_DIR_PREF = string_make("/usr/share/games/zangband/pref");
++	ANGBAND_DIR_SCRIPT = string_make("/usr/share/games/zangband/script");
++	ANGBAND_DIR_XTRA = string_make("/usr/share/games/zangband/xtra");
+ }
+ 
+ 

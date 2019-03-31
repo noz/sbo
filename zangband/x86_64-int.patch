@@ -1,0 +1,13 @@
+--- src/h-type.h.orig
++++ src/h-type.h
+@@ -116,8 +116,8 @@
+ 
+ #else  /* L64 */
+ 
+-typedef signed long s32b;
+-typedef unsigned long u32b;
++typedef signed int s32b;
++typedef unsigned int u32b;
+ 
+ #ifdef USE_64B
+ 
