@@ -1,0 +1,8 @@
+
+patched to pass build and for system-wide installation.
+
+the binary /usr/games/crawl is setgid to 'games' group.
+as a result, savefiles does not be zip'ed anymore.
+(setgid process can't do system(3))
+
+patched for ncurses 6 on x86_64 arch.

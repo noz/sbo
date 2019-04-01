@@ -1,0 +1,223 @@
+--- source/describe.cc
++++ source/describe.cc
+@@ -19,11 +19,11 @@
+ #include "AppHdr.h"
+ #include "describe.h"
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
+-#include <string>
++#include <string.h>
+ 
+ #ifdef DOS
+ #include <conio.h>
+ #endif
+ 
+
+--- source/effects.cc
++++ source/effects.cc
+@@ -11,10 +11,11 @@
+ #include "AppHdr.h"
+ #include "effects.h"
+ 
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include "externs.h"
+ 
+ #include "beam.h"
+ #include "direct.h"
+
+--- source/hiscores.cc
++++ source/hiscores.cc
+@@ -26,10 +26,11 @@
+  */
+ 
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <ctype.h>
+ 
+ #include "AppHdr.h"
+ #include "externs.h"
+ 
+
+--- source/initfile.cc
++++ source/initfile.cc
+@@ -13,11 +13,11 @@
+ #include "AppHdr.h"
+ #include "initfile.h"
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <string>
++#include <string.h>
+ #include <ctype.h>
+ 
+ #include "externs.h"
+ #include "defines.h"
+ #include "player.h"
+
+--- source/it_use3.cc
++++ source/it_use3.cc
+@@ -12,10 +12,11 @@
+  */
+ 
+ #include "AppHdr.h"
+ #include "it_use3.h"
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include "externs.h"
+ 
+ #include "beam.h"
+
+--- source/libutil.cc
++++ source/libutil.cc
+@@ -8,10 +8,11 @@
+  *
+  */
+ 
+ #include "AppHdr.h"
+ #include <stdio.h>
++#include <string.h>
+ #include <ctype.h>
+ 
+ void get_input_line( char *const buff, int len )
+ {
+     buff[0] = '\0';         // just in case
+
+--- source/macro.cc
++++ source/macro.cc
+@@ -32,11 +32,11 @@
+ #define MACRO_CC
+ #include "macro.h"
+ 
+ #include <iostream>
+ #include <fstream>
+-#include <string>
++#include <string.h>
+ #include <map>
+ #include <deque>
+ 
+ #include <stdio.h>      // for snprintf
+ #include <ctype.h>      // for tolower
+
+--- source/monplace.cc
++++ source/monplace.cc
+@@ -8,10 +8,12 @@
+  *               <1>     -/--/--        LRH             Created
+  */
+ 
+ #include "AppHdr.h"
+ #include "monplace.h"
++
++#include <string.h>
+ 
+ #include "externs.h"
+ #include "dungeon.h"
+ #include "monstuff.h"
+ #include "mon-pick.h"
+
+--- source/randart.cc
++++ source/randart.cc
+@@ -15,10 +15,11 @@
+ #include "AppHdr.h"
+ #include "randart.h"
+ 
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include "externs.h"
+ #include "itemname.h"
+ #include "stuff.h"
+ #include "wpn-misc.h"
+
+--- source/religion.cc
++++ source/religion.cc
+@@ -51,22 +51,22 @@
+ #include "spells3.h"
+ #include "spl-cast.h"
+ #include "stuff.h"
+ 
+ const char *sacrifice[] = {
+-    {" glows silver and disappears."},
+-    {" glows a brilliant golden colour and disappears."},
+-    {" rots away in an instant."},
+-    {" crumbles to dust."},
+-    {" is eaten by a bug."},    /* Xom - no sacrifices */
+-    {" explodes into nothingness."},
+-    {" is consumed in a burst of flame."},
+-    {" is consumed in a roaring column of flame."},
+-    {" glows faintly for a moment, then is gone."},
+-    {" is consumed in a roaring column of flame."},
+-    {" glows with a rainbow of weird colours and disappears."},
+-    {" evaporates."}
++    " glows silver and disappears.",
++    " glows a brilliant golden colour and disappears.",
++    " rots away in an instant.",
++    " crumbles to dust.",
++    " is eaten by a bug.",    /* Xom - no sacrifices */
++    " explodes into nothingness.",
++    " is consumed in a burst of flame.",
++    " is consumed in a roaring column of flame.",
++    " glows faintly for a moment, then is gone.",
++    " is consumed in a roaring column of flame.",
++    " glows with a rainbow of weird colours and disappears.",
++    " evaporates."
+ };
+ 
+ void altar_prayer(void);
+ void dec_penance(int god, int val);
+ void divine_retribution(int god);
+
+--- source/skills2.cc
++++ source/skills2.cc
+@@ -18,10 +18,11 @@
+ #include "AppHdr.h"
+ #include "skills2.h"
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ 
+ #ifdef DOS
+ #include <conio.h>
+ #endif
+
+--- source/spells4.cc
++++ source/spells4.cc
+@@ -10,11 +10,11 @@
+  *   <1> 06jan2000  jmf  Created
+  */
+ 
+ #include "AppHdr.h"
+ 
+-#include <string>
++#include <string.h>
+ #include <stdio.h>
+ 
+ #include "externs.h"
+ 
+ #include "abyss.h"
+
+--- source/tags.cc
++++ source/tags.cc
+@@ -52,10 +52,11 @@
+    system-indepedent data types).
+ 
+ */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>            // for memcpy
+ 
+ #ifdef LINUX
+ #include <sys/types.h>
+ #include <sys/stat.h>
+

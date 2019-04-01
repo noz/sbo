@@ -1,0 +1,105 @@
+--- source/files.cc.orig
++++ source/files.cc
+@@ -912,15 +912,11 @@
+     char charFile[kFileNameSize];
+ 
+ #ifdef SAVE_PACKAGE_CMD
+-    char cmd_buff[1024];
+     char name_buff[kFileNameSize];
+ 
+     snprintf( name_buff, sizeof(name_buff), 
+               SAVE_DIR_PATH "%s%d", you.your_name, (int) getuid() );
+ 
+-    snprintf( cmd_buff, sizeof(cmd_buff), 
+-              SAVE_PACKAGE_CMD, name_buff, name_buff );
+-
+     snprintf( charFile, sizeof(charFile), 
+               "%s.sav", name_buff );
+ 
+@@ -973,10 +969,6 @@
+     clrscr();
+ 
+ #ifdef SAVE_PACKAGE_CMD
+-    if (system( cmd_buff ) != 0)
+-    {
+-        cprintf( EOL "Warning: Zip command (SAVE_PACKAGE_CMD) returned non-zero value!" EOL );
+-    }
+ 
+ #ifdef SHARED_FILES_CHMOD_PRIVATE
+     strcat( name_buff, PACKAGE_SUFFIX );
+--- source/newgame.cc.orig
++++ source/newgame.cc
+@@ -203,67 +203,12 @@
+     FILE *handle;
+     char char_fil[kFileNameSize];
+ 
+-#ifdef LOAD_UNPACKAGE_CMD
+-    // Create the file name base
+-    char name_buff[kFileNameLen];
+-
+-    snprintf( name_buff, sizeof(name_buff), 
+-              SAVE_DIR_PATH "%s%d", you.your_name, (int) getuid() );
+-
+-    char zip_buff[kFileNameLen];
+-
+-    strcpy(zip_buff, name_buff);
+-    strcat(zip_buff, PACKAGE_SUFFIX);
+-
+-    // Create save dir name
+-    strcpy(char_fil, name_buff);
+-    strcat(char_fil, ".sav");
+-
+-    handle = fopen(zip_buff, "rb+");
+-    if (handle != NULL)
+-    {
+-        cprintf(EOL "Loading game..." EOL);
+-
+-        // Create command
+-        char cmd_buff[1024];
+-
+-        snprintf( cmd_buff, sizeof(cmd_buff), LOAD_UNPACKAGE_CMD, name_buff );
+-
+-        if (system( cmd_buff ) != 0)
+-        {
+-            cprintf( EOL "Warning: Zip command (LOAD_UNPACKAGE_CMD) returned non-zero value!" EOL );
+-        }
+-
+-        fclose(handle);
+-
+-        // Remove save game package
+-        unlink(zip_buff);
+-    }
+-    else
+-    {
+-#ifdef DO_ANTICHEAT_CHECKS
+-        // Simple security patch -- must have zip file otherwise invalidate
+-        // the character.  Right now this just renames the .sav file to
+-        // .bak, allowing anyone with the appropriate permissions to
+-        // fix a character in the case of a bug.  This could be changed
+-        // to unlinking the file(s) which would remove the character.
+-        strcat(name_buff, ".bak");
+-        rename(char_fil, name_buff);
+-#endif
+-    }
+-
+-#else
+-    strcpy(char_fil, "");
+-    strncat(char_fil, you.your_name, kFileNameLen);
+-    strcat(char_fil, ".sav");
+-#endif
+-
+-    handle = fopen(char_fil, "rb+");
+-
+-    if (handle != NULL)
+-    {
+-        fclose(handle);
+-        return true;
++    snprintf(char_fil, sizeof(char_fil),
++	     SAVE_DIR_PATH "%s%d.sav", you.your_name, (int)getuid());
++  
++    if ((handle = fopen(char_fil, "rb+")) != NULL) {
++      fclose(handle);
++      return true;
+     }
+     return false;
+ }

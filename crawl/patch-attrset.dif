@@ -1,0 +1,22 @@
+--- source/liblinux.cc.orig
++++ source/liblinux.cc
+@@ -646,7 +646,8 @@
+     // figure out which colour pair we want
+     const int pair = (fg == 0 && bg == 0) ? 63 : (bg * 8 + fg);
+ 
+-    attrset( COLOR_PAIR(pair) | flags | character_set );
++    attron(COLOR_PAIR(pair));
++    attron(flags | character_set);
+ }
+ 
+ 
+@@ -694,7 +695,8 @@
+     // figure out which colour pair we want
+     const int pair = (fg == 0 && bg == 0) ? 63 : (bg * 8 + fg);
+ 
+-    attrset( COLOR_PAIR(pair) | flags | character_set );
++    attron(COLOR_PAIR(pair));
++    attron(flags | character_set);
+ }
+ 
+ 
