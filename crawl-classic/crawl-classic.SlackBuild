@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for crawl
+# Slackware build script for crawl-classic
 
 # Copyright 2019, NOZAWA Hiromasa, Tokyo
 # All rights reserved.
@@ -22,7 +22,7 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=crawl
+PRGNAM=crawl-classic
 VERSION=${VERSION:-4.0.0b26}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_noz}
@@ -80,12 +80,12 @@ patch -p0 < $CWD/patch-attrset.dif
 
 
 mkdir -p $PKG/usr/games
-cp source/crawl $PKG/usr/games
+cp source/crawl $PKG/usr/games/crawl-classic
 
-mkdir -p $PKG/var/games/crawl
+mkdir -p $PKG/var/games/crawl-classic
 
 mkdir -p $PKG/usr/man/man6
-cp docs/crawl.6 $PKG/usr/man/man6
+cp docs/crawl.6 $PKG/usr/man/man6/crawl-classic.6
 
 
 find $PKG -print0 | xargs -0 file \

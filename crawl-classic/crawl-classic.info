@@ -1,4 +1,4 @@
-PRGNAM="crawl"
+PRGNAM="crawl-classic"
 VERSION="4.0.0b26"
 HOMEPAGE="http://www.dungeoncrawl.org/"
 DOWNLOAD="ftp://ftp.dungeoncrawl.org/dev/4.0.x/src/dc400b26-src.tbz2"

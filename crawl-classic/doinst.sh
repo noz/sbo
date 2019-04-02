@@ -1,6 +1,6 @@
 
-bin=/usr/games/crawl
-vardir=/var/games/crawl
+bin=/usr/games/crawl-classic
+vardir=/var/games/crawl-classic
 
 chgrp games $bin
 chmod g+s $bin

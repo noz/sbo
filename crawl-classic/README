@@ -1,0 +1,9 @@
+
+- the binary name 'crawl' is renamed to 'crawl-classic' to
+  distinguish from DCSS
+
+- some patches applied to pass build
+
+- the binary is setgid to 'games' group for system-wide
+  installation. as a result, savefiles does not be zip'ed
+  anymore. (setgid process can't do system(3))
